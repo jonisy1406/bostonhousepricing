@@ -10,7 +10,6 @@ There are steps that you have to do:
 1. Create a new environment    
 ```
 conda create -p venv python==3.7 -y  
-
 ``` 
 2. Create a requirements.txt that contains libraries used  
 
@@ -29,5 +28,5 @@ git config --global user.email "Your github email account"
 ```   
 5. Push your local repository to remot (Github)  :
 - git add . or git add specifiefile
-- git commit -m "notes"
-- git push
+- git commit -m "notes"  
+- git push  
