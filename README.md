@@ -27,3 +27,7 @@ git config --global user.name "Your Username"
 ```
 git config --global user.email "Your github email account"  
 ```   
+5. Push your local repository to remot (Github)  :
+- git add . or git add specifiefile
+- git commit -m "notes"
+- git push
