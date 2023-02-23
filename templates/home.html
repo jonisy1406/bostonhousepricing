@@ -2,47 +2,80 @@
 <html >
 
 <head>
-  <meta charset="UTF-8">
   <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-
-  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
 </head>
 
 <body>
- <div class="login">
-	<h1>Boston House Price Prediction</h1>
 
+  <h1 style="text-align: center;">Boston House Price Prediction</h1>
+  <div class="form-wrapper">
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
-
-       
-
+      <div class="placeholder-wrapper">
+        <div class="placeholder-group">
+          <label for="CRIM">CRIM</label>
+          <input type="text" id ="CRIM" name="CRIM" value="{{ request.form['CRIM'] }}" required title="per capita crime rate by town">
+        </div>
+        <div class="placeholder-group">
+          <label for="ZN">ZN</label>
+          <input type="text" id ="ZN" name="ZN" value="{{ request.form['ZN']}}" required title="proportion of residential land zoned for lots over 25,000 sq.ft">
+        </div>
+        <div class="placeholder-group">
+          <label for="INDUS">INDUS</label>
+          <input type="text" id ="INDUS" name="INDUS"  value="{{ request.form['INDUS']}}" required title="proportion of non-retail business acres per town">
+        </div>
+        <div class="placeholder-group">
+          <label for="CHAS">CHAS</label>
+          <input type="text" id ="CHAS" name="CHAS"  value="{{ request.form['CHAS']}}" required title="Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)">
+        </div>
+        <div class="placeholder-group">
+          <label for="NOX">NOX</label>
+          <input type="text" id ="NOX" name="NOX"  value="{{ request.form['NOX']}}" required title="nitric oxides concentration (parts per 10 million)">
+        </div>
+        <div class="placeholder-group">
+          <label for="RM">RM</label>
+          <input type="text" id ="RM" name="RM"  value="{{ request.form['RM']}}" required title="average number of rooms per dwelling">
+        </div>
+        <div class="placeholder-group">
+          <label for="Age">Age</label>
+          <input type="text" id ="Age" name="Age"  value="{{ request.form['Age']}}" required title="proportion of owner-occupied units built prior to 1940">
+        </div>
+        <div class="placeholder-group">
+          <label for="DIS">DIS</label>
+          <input type="text" id ="DIS" name="DIS"  value="{{ request.form['DIS']}}" required title="weighted distances to five Boston employment centres">
+        </div>
+        <div class="placeholder-group">
+          <label for="RAD">RAD</label>
+          <input type="text" id ="RAD" name="RAD"  value="{{ request.form['RAD']}}" required title="index of accessibility to radial highways">
+        </div>
+        <div class="placeholder-group">
+          <label for="TAX">TAX</label>
+          <input type="text" id ="TAX" name="TAX"  value="{{ request.form['TAX']}}" required title="full-value property-tax rate per $10,000">
+        </div>
+        <div class="placeholder-group">
+          <label for="PTRATIO">PTRATIO</label>
+          <input type="text" id ="PTRATIO" name="PTRATIO"  value="{{ request.form['PTRATIO']}}" required title="pupil-teacher ratio by town">
+        </div>
+        <div class="placeholder-group">
+          <label for="B">B</label>
+          <input type="text" id ="B" name="B"  value="{{ request.form['B']}}" required title="1000(Bk - 0.63)^2 where Bk is the proportion of black people by town">
+        </div>
+        <div class="placeholder-group">
+          <label for="LSTAT">LSTAT</label>
+          <input type="text" id ="LSTAT" name="LSTAT"  value="{{ request.form['LSTAT']}}" required title="% lower status of the population">
+        </div>
+      </div>
+      <div class="button-wrapper">
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      </div>
     </form>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+  </div>
 
-   <br>
-   <br>
-  
-   
- </div>
- {{prediction_text}}
+  <div id="result">
+    {{prediction_text}}
+  </div>
 
 </body>
 </html>
