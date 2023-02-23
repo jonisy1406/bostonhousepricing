@@ -7,10 +7,27 @@
 </head>
 
 <body>
-
-  <h1 style="text-align: center;">Boston House Price Prediction</h1>
-  <div class="form-wrapper">
-     <!-- Main Input For Receiving Query to our ML -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#" >logo</a>
+    </div>
+    <ul class="menu">
+      <li><a href="#about-project">About This Project</a></li>
+      <li><a href="#predictions">Boston House Price Prediction</a></li>
+      <li><a href="#about-me">About Me</a></li>
+    </ul>
+  </nav>
+  <div class="project" id="about-project">
+    <img src="/static/images/house.jpg" alt="picture">
+      <div class="text">
+        <h2>About This Project</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat aperiam nesciunt facilis explicabo libero dicta aut iure est at? Molestias, ullam. Sunt assumenda adipisci, doloribus quod facere eveniet vel magni.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum esse deserunt aut nobis a excepturi quibusdam vel. Quas, eum voluptatum incidunt facere qui facilis, dolore error, ratione laudantium ipsam numquam.</p>
+      </div>
+  </div>
+  <div class="form-wrapper" id="predictions">
+    <!-- Main Input For Receiving Query to our ML -->
+    <h2 style="text-align: center;"> Boston House Price Prediction</h2>
     <form action="{{ url_for('predict')}}"method="post">
       <div class="placeholder-wrapper">
         <div class="placeholder-group">
@@ -70,12 +87,15 @@
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
       </div>
     </form>
+    <div id="result" name="result">
+    {%if submitted %}
+      {{prediction_text}}
+    {% endif %}
+    </div>
     <script src="{{ url_for('static', filename='script.js')}}"></script>
   </div>
 
-  <div id="result">
-    {{prediction_text}}
-  </div>
+  
 
 </body>
 </html>
