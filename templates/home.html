@@ -2,14 +2,17 @@
 <html >
 
 <head>
-  <title>ML API</title>
+  <link rel="icon" href="/static/images/icon-house.png">
+  <title>The Boston House Prediction</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
 <body>
   <nav class="navbar">
     <div class="logo">
-      <a href="#" >logo</a>
+      <a href="#" >Logo</a>
     </div>
     <ul class="menu">
       <li><a href="#about-project">About This Project</a></li>
@@ -21,8 +24,10 @@
     <img src="/static/images/house.jpg" alt="picture">
       <div class="text">
         <h2>About This Project</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat aperiam nesciunt facilis explicabo libero dicta aut iure est at? Molestias, ullam. Sunt assumenda adipisci, doloribus quod facere eveniet vel magni.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum esse deserunt aut nobis a excepturi quibusdam vel. Quas, eum voluptatum incidunt facere qui facilis, dolore error, ratione laudantium ipsam numquam.</p>
+        <p>The Boston House Prediction project is a classic machine learning project that aims to predict the house price (median value of owner owner-occupied homes) in Boston. The data used in this project called the Boston Housing Dataset, which contains 13 different features that are believed to be relevant in determining the price of a house. The data set can be access in sklearn library <code>from sklearn.datasets import load_boston</code>.</p>
+        <p>The goal of the project is to use machine learning algorithms to build a model that can accurately predict the price of a house given its features. This can be used by real estate agent, homeowners, and potential buyers to estimate the value of property.</p>
+        <p>To accomplish this, the project typically involves several steps, including data cleaning, data exploratory, features transformation, and model training adn evaluation using some algorithms. Data cleaning involves dealing with outliers, data exploration involves visualizing the data and identifiying patterns and relationship between the features and the target variable, feature transformation involves scaling using standarscaler (standarization) to make data more consistant and finally, the project involves and evaluating a machine learning model on the data.</p>
+        <p>In this project there are some algorithms that already applied such as LinearRegression, Lasso, Ridge, ElasticNet, RandomForestRegressor, DecisionTreeRegressor, and SVR. For deploy the machine learning in this web, I used model with RandomForestRegressor because this model has good perfomance compare to others algorithm. From the metrics evaluation we know that the RandomForestRegressor has more good performance than other algorithm. The values of MAE and MSE are small and R2 Score big more that other algorithm.</p>
       </div>
   </div>
   <div class="form-wrapper" id="predictions">
@@ -94,8 +99,25 @@
     </div>
     <script src="{{ url_for('static', filename='script.js')}}"></script>
   </div>
+  <div class="about" id="about-me">
+    <img src="/static/images/Photograph.jpg" alt="picture">
+    <div class="text2">
+      <h2>About Me</h2>
+      <p>Joni is a fresh graduate student from Bandung Institute of Technology. He is interested in data science, data 
+        analytics, and ocean issues. To improve his skills in the field of data, he took several courses and just 
+        completed a data science bootcamp with a good grade. Some of the tools he has used in working on projects 
+        are Python, PostgreSQL, MySQL, Tableau, Power BI, Google Data Studio, and Microsoft Excel.</p>
+    </div>
+  </div>
 
-  
+  <footer>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/jonisyofian/" target="_blank"><i class="fab fa-linkedin fa-lg"></i> linkedIn: jonisyofian</a>
+      <a href="mailto:jonisyofian14@gmail.com"><i class="far fa-envelope fa-lg"></i> Email: jonisyofian14@gmail.com</a>
+      <a href="https://github.com/jonisy1406" target="_blank"><i class="fab fa-github fa-lg"></i> Github: jonisy1406</a>
+    </div>
+  </footer>
 
 </body>
+
 </html>
